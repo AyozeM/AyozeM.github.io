@@ -8,12 +8,12 @@ window.addEventListener("load",()=>{
 
 },false);
 
-export let creaFormulario = () =>{
+export const creaFormulario = () =>{
     creaMovilidades();
     creaToggle();
 }
 
-let creaMovilidades = ()=>{
+const creaMovilidades = ()=>{
     let movilidades = [];
     
         for(let key in bdd){
@@ -32,7 +32,7 @@ let creaMovilidades = ()=>{
         });
 };
 
-let creaToggle = () =>{
+const creaToggle = () =>{
     [].slice.call(document.querySelectorAll(`nav input[type="radio"]`)).map(e=>{
         e.addEventListener("change",()=>{
             if(document.querySelector(`nav #modificable`)!= null){
@@ -43,7 +43,7 @@ let creaToggle = () =>{
         });
     });
 }
-let escribeHtml = () =>{
+const escribeHtml = () =>{
     marco.insertBefore(crearElemento({
         etiqueta:"p",
         contenido:null,
@@ -55,21 +55,3 @@ let escribeHtml = () =>{
         ]
     }),document.querySelector("nav a"));
 };
-/* let tooglePaises = ()=>{
-    filtraPaisesCiclos();
-}
-
-let toogleCiclos = () =>{
-    marco.appendChild(crearElemento({
-        etiqueta:"p",
-        contenido:null,
-        atributos:[
-            {
-                nombre:"id",
-                valor:"modificable"
-            }
-        ],
-        hijos:null
-    }));
-    escribePaises();
-} */

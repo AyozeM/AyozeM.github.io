@@ -23,7 +23,7 @@ export let escribePaises = () =>{
     });
 };
 
-let creaEstructura = () =>{
+const creaEstructura = () =>{
     document.querySelector(`nav #modificable`).appendChild(crearElemento({
         etiqueta:"p",
         contenido:null,
@@ -69,7 +69,7 @@ let creaEstructura = () =>{
         }]
     }));
 };
-let creaHtml = (numero,nombre) =>{
+const creaHtml = (numero,nombre) =>{
     document.querySelector(`nav #modificable`).appendChild(crearElemento({
         etiqueta:"p",
         contenido:null,
@@ -119,7 +119,7 @@ let creaHtml = (numero,nombre) =>{
     }));
 };
 
-let getPaises = () => {
+const getPaises = () => {
     let listaPaises = [];
 
     for(let key in bdd){

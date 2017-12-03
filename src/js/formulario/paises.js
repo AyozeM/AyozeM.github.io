@@ -10,7 +10,7 @@ window.addEventListener("load",()=>{
     },false);
 },false);
 
-export let filtraPaisesCiclos = () =>{
+export const filtraPaisesCiclos = () =>{
     let paises = cambiaPaises(document.querySelector("#movilidad").value);
     document.querySelector("#modificable").appendChild(crearElemento({
         etiqueta:"p",
@@ -53,7 +53,7 @@ export let filtraPaisesCiclos = () =>{
     })
 }
 
-let cambiaPaises = movilidad =>{ 
+const cambiaPaises = movilidad =>{ 
     let paises = [];
     bddar.filter(e=>e.tipo == movilidad).map(e=>{
         if(!paises.includes(e.ciclo)){
