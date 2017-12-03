@@ -53,7 +53,7 @@ export let filtraPaisesCiclos = () =>{
     })
 }
 
-let cambiaPaises = movilidad =>{ 
+let cambiaPaises = movilidad =>{
     let paises = [];
     bddar.filter(e=>e.tipo == movilidad).map(e=>{
         if(!paises.includes(e.ciclo)){

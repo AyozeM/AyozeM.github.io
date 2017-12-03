@@ -15,7 +15,7 @@ export let escribePaises = () =>{
             [].slice.call(document.querySelectorAll("#modificable input")).map(e=>e.checked=false);
         }
     },false);
-    
+
     [].slice.call(document.querySelectorAll("#modificable p:nth-child(n+2) input")).map(e=>{
         e.addEventListener("change",()=>{
             document.querySelector("#todos").checked = false;
@@ -127,6 +127,6 @@ let getPaises = () => {
             listaPaises.push(bdd[key].pais.nombre);
         }
     }
-    
+
     return listaPaises;
 };

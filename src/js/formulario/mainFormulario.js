@@ -15,13 +15,13 @@ export let creaFormulario = () =>{
 
 let creaMovilidades = ()=>{
     let movilidades = [];
-    
+
         for(let key in bdd){
             if(!movilidades.includes(bdd[key].tipo)){
                 movilidades.push(bdd[key].tipo);
             }
         }
-        
+
         movilidades.map(e=>{
             document.querySelector("#movilidad").appendChild(crearElemento({
                 etiqueta:"option",
@@ -73,3 +73,10 @@ let toogleCiclos = () =>{
     }));
     escribePaises();
 } */
+
+
+//////////////////
+// WEBPACK FOOTER
+// ./src/js/formulario/mainFormulario.js
+// module id = 36
+// module chunks = 0

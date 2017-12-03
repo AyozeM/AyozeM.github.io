@@ -233,7 +233,7 @@ let bdd ={
       "pais":{
         "nombre":"Reino Unido",
         "ciudad":{
-        "nombre":"Londres", 
+        "nombre":"Londres",
         "latitud":"51.507351",
         "longitud":"-0.127758"
         }
@@ -377,7 +377,7 @@ let bdd ={
       "pais":{
         "nombre":"Reino Unido",
         "ciudad":{
-          "nombre":"Londres", 
+          "nombre":"Londres",
           "latitud":"51.507351",
           "longitud":"-0.127758"
         }
@@ -545,7 +545,7 @@ let bdd ={
       "pais":{
         "nombre":"Reino Unido",
         "ciudad":{
-        "nombre":"Londres", 
+        "nombre":"Londres",
         "latitud":"51.507351",
         "longitud":"-0.127758"
         }
@@ -557,7 +557,7 @@ let bdd ={
       "pais":{
         "nombre":"Reino Unido",
         "ciudad":{
-        "nombre":"Londres", 
+        "nombre":"Londres",
         "latitud":"51.507351",
         "longitud":"-0.127758"
         }
@@ -702,5 +702,5 @@ let bddar = [];
   for(let key in bdd){
     bddar.push(bdd[key]);
   }
-var x = "asd";
+
   export {bdd,bddar};
