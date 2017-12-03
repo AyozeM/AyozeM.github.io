@@ -181,7 +181,7 @@ let bdd ={
     },
     "movilidadPr01":{
       "tipo":"Profesorado",
-      "departamento":"Informática y Comunicaciones",
+      "ciclo":"Informática y Comunicaciones",
       "pais":{
         "nombre":"Italia",
         "ciudad":{

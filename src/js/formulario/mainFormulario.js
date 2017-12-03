@@ -11,7 +11,6 @@ window.addEventListener("load",()=>{
 export let creaFormulario = () =>{
     creaMovilidades();
     creaToggle();
-    toogleCiclos();
 }
 
 let creaMovilidades = ()=>{
@@ -39,13 +38,13 @@ let creaToggle = () =>{
             if(document.querySelector(`nav #modificable`)!= null){
                 marco.removeChild(document.querySelector(`nav #modificable`));
             }
-            e.value == 'paises'?tooglePaises():toogleCiclos();
+            escribeHtml();
+            e.value == 'paises'?escribePaises():filtraPaisesCiclos();
         });
     });
 }
-
-let tooglePaises = ()=>{
-    marco.appendChild(crearElemento({
+let escribeHtml = () =>{
+    marco.insertBefore(crearElemento({
         etiqueta:"p",
         contenido:null,
         atributos:[
@@ -54,7 +53,9 @@ let tooglePaises = ()=>{
                 valor:"modificable"
             }
         ]
-    }));
+    }),document.querySelector("nav a"));
+};
+/* let tooglePaises = ()=>{
     filtraPaisesCiclos();
 }
 
@@ -71,4 +72,4 @@ let toogleCiclos = () =>{
         hijos:null
     }));
     escribePaises();
-}
+} */

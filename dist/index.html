@@ -10,18 +10,22 @@
     <script src="js/bundle.js"></script>
         <nav>
         <p>
-            <select name="movilidad" id="movilidad"></select>
+            <label for="movilidad">
+                <span>Seleccione el tipo de movilidad que desa consultar</span>
+                <select name="movilidad" id="movilidad"></select>
+            </label>
         </p>
         <p>
-                <label for="ciclo">
-                    <span>Filtrar por ciclos</span>
-                    <input type="radio"  value="ciclos" id="ciclo" name="toggle" checked>
-                </label>
-                <label for="pais">
-                    <span>filtrar por paises</span>
-                    <input type="radio" value="paises" name="toggle" id="pais">
-                </label>
-            </p>
+            <label for="ciclo">
+                <span>Filtrar por ciclos</span>
+                <input type="radio"  value="ciclos" id="ciclo" name="toggle">
+            </label>
+            <label for="pais">
+                <span>filtrar por paises</span>
+                <input type="radio" value="paises" name="toggle" id="pais">
+            </label>
+        </p>
+        <a href="#" id="ver">Visualizar mapa</a>
     </nav>
     
 </body>
