@@ -1,4 +1,4 @@
-import {bddar} from '../bdd';
+import {bddar, bdd} from '../bdd';
 let map;
 let marcadores = [];
 export const dibujaMapa = () =>{
@@ -17,10 +17,10 @@ export const creaMarcador = (data)=>{
         map:map,
         title:`<strong>Ciclos:</strong><br>${data.ciclos.map(e=>`<li>${e}</li>`).toString().replace(/,/g,'')}` 
     });
+    let info = new google.maps.InfoWindow({
+        content:marcador.title
+    });
     google.maps.event.addListener(marcador,"click",()=>{
-        let info = new google.maps.InfoWindow({
-            content:marcador.title
-        });
         info.open(map,marcador);
         marcador.setAnimation(google.maps.Animation.BOUNCE);
         setTimeout(()=>{marcador.setAnimation(null);},750);
@@ -32,6 +32,7 @@ export const porPaises = () => {
     let x = [];
     [].slice.call(document.querySelectorAll("nav #modificable input:checked")).map(e=>{
         let pais = bddar.filter(y=>y.pais.nombre==e.value);
+        pais = pais.filter(d=>d.tipo == document.querySelector("#movilidad").value);
         pais.map(s=>{
             let aux = {
                 nombre:s.pais.ciudad.nombre,
@@ -56,6 +57,13 @@ export const limiparMapa = ()=>{
         e.setMap(null);
     });
 }
-const porClicos= () => {
-
+export const porClicos= () => {
+    let y = bddar.filter(e=>e.ciclo == document.querySelector("#modificable select").value);
+    y = y.map(s=>{return s = {
+        nombre:s.pais.ciudad.nombre,
+        latitud:s.pais.ciudad.latitud,
+        longitud:s.pais.ciudad.longitud,
+        ciclos:[s.ciclo]
+    }});
+    return y;
 }
