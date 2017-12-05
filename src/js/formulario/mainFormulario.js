@@ -5,12 +5,20 @@ import {filtraPaisesCiclos} from '../formulario/paises';
 let marco;
 window.addEventListener("load",()=>{
     marco = document.querySelector("nav");
-
+    document.querySelector("#movilidad").addEventListener("change",()=>{
+        if(document.querySelector('input[type="checkbox"]:checked') == null){
+            [].slice.call(document.querySelector("#modificable").children).map(e=>{
+                e.parentElement.removeChild(e);
+            })
+            filtraPaisesCiclos();
+        }
+    },false);
 },false);
 
 export const creaFormulario = () =>{
     creaMovilidades();
     creaToggle();
+    filtraPaisesCiclos();
 }
 
 const creaMovilidades = ()=>{
@@ -33,14 +41,12 @@ const creaMovilidades = ()=>{
 };
 
 const creaToggle = () =>{
-    [].slice.call(document.querySelectorAll(`nav input[type="radio"]`)).map(e=>{
-        e.addEventListener("change",()=>{
-            if(document.querySelector(`nav #modificable`)!= null){
-                marco.removeChild(document.querySelector(`nav #modificable`));
-            }
-            escribeHtml();
-            e.value == 'paises'?escribePaises():filtraPaisesCiclos();
-        });
+    document.querySelector('.toggle input[type="checkbox"]').addEventListener("change",e=>{
+        if(document.querySelector(`nav #modificable`)!= null){
+            marco.removeChild(document.querySelector(`nav #modificable`));
+        }
+        escribeHtml();
+        e.currentTarget.checked?escribePaises():filtraPaisesCiclos();
     });
 }
 const escribeHtml = () =>{
@@ -53,5 +59,5 @@ const escribeHtml = () =>{
                 valor:"modificable"
             }
         ]
-    }),document.querySelector("nav a"));
+    }),document.querySelector("nav p:last-of-type"));
 };

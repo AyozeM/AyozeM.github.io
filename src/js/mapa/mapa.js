@@ -1,11 +1,19 @@
 import {bddar, bdd} from '../bdd';
+import { crearElemento } from '../libreriaDOM';
 let map;
 let marcadores = [];
 export const dibujaMapa = () =>{
     let mapOptions = {
         center: new google.maps.LatLng(55.8,9.5),
         zoom:4,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        disableDefaultUI: true,
+        zoomControl: true,
+        mapTypeControl: true,
+        scaleControl: true,
+        streetViewControl: false,
+        rotateControl: false,
+        fullscreenControl: false
     };
     
     map = new google.maps.Map(document.querySelector(`#mapa`),mapOptions);
@@ -29,6 +37,7 @@ export const creaMarcador = (data)=>{
 }
 
 export const porPaises = () => {
+    limiparMapa();
     let x = [];
     [].slice.call(document.querySelectorAll("nav #modificable input:checked")).map(e=>{
         let pais = bddar.filter(y=>y.pais.nombre==e.value);
@@ -49,7 +58,7 @@ export const porPaises = () => {
             }
         });
     });
-    return x;
+    dibujaMarcadores(x);
 }
 
 export const limiparMapa = ()=>{
@@ -58,6 +67,7 @@ export const limiparMapa = ()=>{
     });
 }
 export const porClicos= () => {
+    limiparMapa();
     let y = bddar.filter(e=>e.ciclo == document.querySelector("#modificable select").value);
     y = y.map(s=>{return s = {
         nombre:s.pais.ciudad.nombre,
@@ -65,5 +75,11 @@ export const porClicos= () => {
         longitud:s.pais.ciudad.longitud,
         ciclos:[s.ciclo]
     }});
-    return y;
+    dibujaMarcadores(y);
+}
+
+const dibujaMarcadores = datos =>{
+    datos.map(e=>{
+        creaMarcador(e);
+    })
 }

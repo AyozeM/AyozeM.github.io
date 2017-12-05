@@ -1,0 +1,16 @@
+body{
+    display: flex;
+    justify-content:space-around;
+    height: 98vh;
+    background-color: lightblue;
+}
+nav{
+    flex-basis: 25vw;
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+}
+section{
+    flex-basis: 65vw;
+    flex: auto;
+}

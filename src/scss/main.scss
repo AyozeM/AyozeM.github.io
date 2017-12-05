@@ -1,8 +1,16 @@
-body{
-    background-color: lightblue;
+@media screen and (max-width:992px){
+    @import './layouts/mobile.scss';
 }
+@media screen and (min-width:992px){
+    @import './layouts/desktop.scss';
+}
+@import './componentes/_toggle_button.scss';
+@import './componentes/bntControles.scss';
+@import './componentes/btnMapa.scss';
+@import './iconos/css/font-awesome.min.css';
 
-#mapa{
-    width: 75vw;
-    height: 75vh;
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
 }
