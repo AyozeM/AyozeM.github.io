@@ -1,8 +1,10 @@
-import {creaFormulario} from './formulario/mainFormulario';
-import {dibujaMapa,porPaises,limiparMapa,porClicos} from './mapa/mapa';
-
 /**
- * Crea los elementos al cargar la pagina
+ * @module main -> Se encarga de unir todos los modulos de la aplicacion
+ */
+import {creaFormulario} from './formulario/mainFormulario';
+import {dibujaMapa,porPaises,porClicos} from './mapa/mapa';
+/**
+ * Carga los elementos necesarios a cargar la pagina
  */
 window.addEventListener("load",()=>{
     creaFormulario();

@@ -1,8 +1,14 @@
+/**
+ * @module mainFormulario -> se encarga de gestionar el formulario
+ */
 import {bddar} from '../bdd';
 import {crearElemento} from '../libreriaDOM';
-import {escribePaises} from '../formulario/ciclos'
-import {filtraPaisesCiclos} from '../formulario/paises';
+import {escribePaises} from '../formulario/paises'
+import {filtraPaisesCiclos} from '../formulario/ciclos';
 let marco;
+/**
+ * Evento que cambia los ciclos disponibles en funcion del grado seleccionado
+ */
 window.addEventListener("load",()=>{
     marco = document.querySelector("nav");
     document.querySelector("#movilidad").addEventListener("change",()=>{
@@ -14,13 +20,18 @@ window.addEventListener("load",()=>{
         }
     },false);
 },false);
-
+/**
+ * Crea todo el formulario
+ */
 export const creaFormulario = () =>{
     creaMovilidades();
     creaToggle();
+    // La opcion que equivaldría al estado inicial del toogle
     filtraPaisesCiclos();
 }
-
+/**
+ * Rellena los grado disponibles en funcion al JSON
+ */
 const creaMovilidades = ()=>{
     let movilidades = [];
 
@@ -38,7 +49,9 @@ const creaMovilidades = ()=>{
             }))
         });
 };
-
+/**
+ * Crea el evento controlador para el toogle
+ */
 const creaToggle = () =>{
     document.querySelector('.toggle input[type="checkbox"]').addEventListener("change",e=>{
         if(document.querySelector(`nav #modificable`)!= null){
@@ -48,6 +61,9 @@ const creaToggle = () =>{
         e.currentTarget.checked?escribePaises():filtraPaisesCiclos();
     });
 }
+/**
+ * Escribe el marco de trabajo para la parte dinamica del formulario
+ */
 const escribeHtml = () =>{
     marco.insertBefore(crearElemento({
         etiqueta:"p",
