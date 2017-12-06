@@ -2,6 +2,10 @@
 
 Esta aplicacion sirve para poder situar en el mapa posibles ciudades a las que los alumnos del CIFP César Manrique pueden ir de Erasmus.
 
+Puedes ver la aplicacion funcionando en [https://ayozem.github.io/dist/](https://ayozem.github.io/dist/)
+
+No olvides permitir el javascript.
+
 ## ¿Cómo se usa?
 El funcionamiento es sencillo, simplemente hay que rellenar el formulario y cuando esté con los datos deseados clicar en el boton *visualizar mapa*.
 

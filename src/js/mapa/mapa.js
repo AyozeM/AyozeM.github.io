@@ -27,7 +27,7 @@ export const dibujaMapa = () =>{
         rotateControl: false,
         fullscreenControl: false
     };
-    
+
     map = new google.maps.Map(document.querySelector(`#mapa`),responsive(mapOptions));
 }
 /**
@@ -48,11 +48,11 @@ const responsive = datosMapa =>{
         case Modernizr.mq('(max-width: 414px)'):
             datosMapa.zoom = 4;
             datosMapa.center = new google.maps.LatLng(52.52000659999999,9.993681899999956);
-            break
+            break;
         case Modernizr.mq('(min-width:768px)'):
             datosMapa.zoom = 4;
             datosMapa.center = new google.maps.LatLng(52.52000659999999,13.404953999999975);
-            break; 
+            break;
     }
     return datosMapa;
 }
@@ -65,7 +65,7 @@ export const creaMarcador = (data)=>{
     let marcador = new google.maps.Marker({
         position:coordenadas,
         map:map,
-        title:`<strong>Ciclos:</strong><br>${data.ciclos.map(e=>`<li>${e}</li>`).toString().replace(/,/g,'')}` 
+        title:`<strong>Ciclos:</strong><br>${data.ciclos.map(e=>`<li>${e}</li>`).toString().replace(/,/g,'')}`
     });
     let info = new google.maps.InfoWindow({
         content:marcador.title
@@ -128,7 +128,7 @@ export const porClicos= () => {
 }
 /**
  * Manda a crear los marcadores necesarios en funcion de los filtros
- * @param {array} datos - lista con las ciudades que concuerdan con los filtros 
+ * @param {array} datos - lista con las ciudades que concuerdan con los filtros
  */
 const dibujaMarcadores = datos =>{
     datos.map(e=>{

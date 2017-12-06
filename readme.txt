@@ -1,4 +1,4 @@
-¿Donde hacen Erasmus la gente del CIFP César Manrique?
+﻿¿Donde hacen Erasmus la gente del CIFP César Manrique?
 -------------------------------------------------------
 Esta aplicacion sirve para poder situar en el mapa posibles ciudades a las que los alumnos del CIFP César Manrique pueden ir de Erasmus.
 
@@ -17,3 +17,5 @@ Si te interesa el proyecto y te surgen dudas técnicas no dudes en visitar la do
 
 ## Observaciones
 Confunsion con el enunciado, se usa la lista de checkbox para los paises y la lista desplegable para los ciclos.
+
+ver la evidencia de la utilización del linter en la carpeta /img
