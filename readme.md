@@ -13,7 +13,7 @@ En el mapa aparecerán los marcadores sobre las ciudades de cumplan los filtros.
 * Además se piensa incluir más información y mejor presentada al clicar sobre los marcadores.
 
 ## Información técnica
-Si te interesa el proyecto y te surgen dudas técnicas no dudes en visitar la documentacion disponible en la carpeta **doc**
+Si te interesa el proyecto y te surgen dudas técnicas no dudes en visitar la documentacion disponible en la carpeta **[doc](https://ayozem.github.io/doc/index.html)**
 
 
 ## Informacion Personal
