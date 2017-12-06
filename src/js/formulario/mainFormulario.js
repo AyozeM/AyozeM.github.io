@@ -1,4 +1,4 @@
-import {bdd,bddar} from '../bdd';
+import {bddar} from '../bdd';
 import {crearElemento} from '../libreriaDOM';
 import {escribePaises} from '../formulario/ciclos'
 import {filtraPaisesCiclos} from '../formulario/paises';
@@ -23,13 +23,12 @@ export const creaFormulario = () =>{
 
 const creaMovilidades = ()=>{
     let movilidades = [];
-    
-        for(let key in bdd){
-            if(!movilidades.includes(bdd[key].tipo)){
-                movilidades.push(bdd[key].tipo);
-            }
+
+    bddar.map(e=>{
+        if(!movilidades.includes(e.tipo)){
+            movilidades.push(e.tipo);
         }
-        
+    });
         movilidades.map(e=>{
             document.querySelector("#movilidad").appendChild(crearElemento({
                 etiqueta:"option",

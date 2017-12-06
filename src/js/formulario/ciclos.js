@@ -1,4 +1,4 @@
-import {bdd,bddar} from '../bdd';
+import {bddar} from '../bdd';
 import {crearElemento} from '../libreriaDOM';
 
 export let escribePaises = () =>{
@@ -122,11 +122,11 @@ const creaHtml = (numero,nombre) =>{
 const getPaises = () => {
     let listaPaises = [];
 
-    for(let key in bdd){
-        if(!listaPaises.includes(bdd[key].pais.nombre)){
-            listaPaises.push(bdd[key].pais.nombre);
+    bddar.map(e=>{
+        let aux = e.pais.nombre;
+        if(!listaPaises.includes(aux)){
+            listaPaises.push(aux);
         }
-    }
-    
+    });
     return listaPaises;
 };

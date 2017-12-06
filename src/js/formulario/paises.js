@@ -1,4 +1,4 @@
-import { bdd , bddar } from '../bdd';
+import { bddar } from '../bdd';
 import { crearElemento } from '../libreriaDOM';
 
 export const filtraPaisesCiclos = () =>{
