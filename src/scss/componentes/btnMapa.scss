@@ -12,4 +12,10 @@ $sombra:5;
     font-size: 2em;
     cursor: pointer;
     margin: 0 auto;
+    @media screen and (min-width:992px){
+        width: 100%;
+        border-radius: 0px;
+        margin:0;
+        height: 100%;
+    }
 }

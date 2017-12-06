@@ -1,14 +1,13 @@
+@import './iconos/css/font-awesome.min.css';
 @media screen and (max-width:992px){
     @import './layouts/mobile.scss';
+    @import './componentes/bntControles.scss';
 }
 @media screen and (min-width:992px){
     @import './layouts/desktop.scss';
 }
 @import './componentes/_toggle_button.scss';
-@import './componentes/bntControles.scss';
 @import './componentes/btnMapa.scss';
-@import './iconos/css/font-awesome.min.css';
-
 *{
     margin:0;
     padding: 0;

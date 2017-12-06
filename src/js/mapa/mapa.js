@@ -16,8 +16,34 @@ export const dibujaMapa = () =>{
         fullscreenControl: false
     };
     
-    map = new google.maps.Map(document.querySelector(`#mapa`),mapOptions);
+    map = new google.maps.Map(document.querySelector(`#mapa`),responsive(mapOptions));
 }
+
+const responsive = datosMapa =>{
+    switch(true){
+        case Modernizr.mq('(max-width: 320px)'):
+        datosMapa.zoom = 3;
+        datosMapa.center = new google.maps.LatLng(52.52000659999999,9.993681899999956);
+        break;
+        case Modernizr.mq('(max-width: 375px)'):
+            datosMapa.zoom = 3;
+            datosMapa.center = new google.maps.LatLng(59.32932349999999,18.068580800000063);
+            break;
+        case Modernizr.mq('(max-width: 414px)'):
+            datosMapa.zoom = 4;
+            datosMapa.center = new google.maps.LatLng(52.52000659999999,9.993681899999956);
+            break
+        case Modernizr.mq('(min-width:768px)'):
+            datosMapa.zoom = 4;
+            datosMapa.center = new google.maps.LatLng(52.52000659999999,13.404953999999975);
+            break; 
+    }
+    return datosMapa;
+}
+/**
+ * Crea un marcador en el mapa
+ * @param {object} data - objeto contenedor de la longitud, a longitud y los ciclos de la ciudad
+ */
 export const creaMarcador = (data)=>{
     let coordenadas = new google.maps.LatLng(data.latitud,data.longitud)
     let marcador = new google.maps.Marker({

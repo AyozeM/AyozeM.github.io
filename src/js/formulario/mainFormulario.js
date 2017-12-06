@@ -6,7 +6,7 @@ let marco;
 window.addEventListener("load",()=>{
     marco = document.querySelector("nav");
     document.querySelector("#movilidad").addEventListener("change",()=>{
-        if(document.querySelector('input[type="checkbox"]:checked') == null){
+        if(document.querySelector('.toggle input[type="checkbox"]:checked') == null){
             [].slice.call(document.querySelector("#modificable").children).map(e=>{
                 e.parentElement.removeChild(e);
             })

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo 'npm funciona correctamente'",
     "prod": "webpack --config webpack.config.js",
-    "pack": "webpack-dev-server --config webpack.config.js --devtool source-map"
+    "pack": "webpack-dev-server --config webpack.config.js --devtool source-map",
+    "doc":  "jsdoc ./src -r -d ./doc/"
   },
   "keywords": [],
   "author": "",
