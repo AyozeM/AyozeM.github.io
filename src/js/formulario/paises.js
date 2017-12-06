@@ -1,6 +1,7 @@
 import { bdd , bddar } from '../bdd';
 import { crearElemento } from '../libreriaDOM';
 
+<<<<<<< HEAD
 window.addEventListener("load",()=>{
     document.querySelector("#movilidad").addEventListener("change",()=>{
         [].slice.call(document.querySelector("#modificable").children).map(e=>{
@@ -11,6 +12,9 @@ window.addEventListener("load",()=>{
 },false);
 
 export let filtraPaisesCiclos = () =>{
+=======
+export const filtraPaisesCiclos = () =>{
+>>>>>>> vista
     let paises = cambiaPaises(document.querySelector("#movilidad").value);
     document.querySelector("#modificable").appendChild(crearElemento({
         etiqueta:"p",
@@ -18,6 +22,7 @@ export let filtraPaisesCiclos = () =>{
         atributos:null,
         hijos:[
             {
+<<<<<<< HEAD
                 etiqueta:"label",
                 contenido:null,
                 atributos:[
@@ -40,6 +45,18 @@ export let filtraPaisesCiclos = () =>{
                         hijos:null
                     }
                 ]
+=======
+                etiqueta:"span",
+                contenido:"Ciclo por el que filtrar",
+                atributos:null,
+                hijos:null
+            },
+            {
+                etiqueta:"select",
+                contenido:null,
+                atributos:null,
+                hijos:null
+>>>>>>> vista
             }
         ]
     }));
@@ -53,7 +70,11 @@ export let filtraPaisesCiclos = () =>{
     })
 }
 
+<<<<<<< HEAD
 let cambiaPaises = movilidad =>{ 
+=======
+const cambiaPaises = movilidad =>{ 
+>>>>>>> vista
     let paises = [];
     bddar.filter(e=>e.tipo == movilidad).map(e=>{
         if(!paises.includes(e.ciclo)){

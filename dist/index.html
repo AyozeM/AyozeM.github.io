@@ -7,6 +7,28 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <script src="js/modernizr.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyACcmNZj_uCsUbFFyH49ptOhb5gmGyCOyc&sensor=false"></script>
+    <script src="js/bundle.js"></script>
+    <section class="controlaFiltros">
+        <label for="controles" class="fa fa-bars"></label>
+    </section>
+    <input type="checkbox" id="controles" checked>
+    <nav>
+        <p>
+            <label for="movilidad">
+                <span>Seleccione el tipo de movilidad que desa consultar</span>
+                <select name="movilidad" id="movilidad"></select>
+            </label>
+        </p>
+        <p class="toggle">
+            <span>Ciclos</span><input type="checkbox" id="toggle"><label for="toggle"><bola></bola></label><span>Paises</span>
+        </p>
+        <p id="modificable"></p>
+        <p>
+            <a href="#" id="ver" class="fa fa-eye">Visualizar mapa</a>
+        </p>
+    </nav>
+    <section id="mapa"></section>
 </body>
 </html>
