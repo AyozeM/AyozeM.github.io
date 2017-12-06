@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-import {bdd} from './bdd';
-import {creaFormulario} from './formulario/mainFormulario';
-window.addEventListener("load",()=>{
-    creaFormulario(bdd);
-=======
 import {creaFormulario} from './formulario/mainFormulario';
 import {dibujaMapa,porPaises,limiparMapa,porClicos} from './mapa/mapa';
 
@@ -20,5 +14,4 @@ window.addEventListener("load",()=>{
             porClicos();
         }
     },false);
->>>>>>> vista
 },false);

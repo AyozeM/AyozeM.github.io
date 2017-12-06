@@ -450,13 +450,8 @@ let bdd ={
         "nombre":"Hungría",
         "ciudad":{
           "nombre":"Budapest",
-<<<<<<< HEAD
-          "latitud":"40.7127837",
-          "longitud":"-74.00594130000002"
-=======
           "latitud":"47.497912",
           "longitud":"19.04023499999994"
->>>>>>> vista
         }
       }
     },

@@ -23,11 +23,7 @@ export let escribePaises = () =>{
     });
 };
 
-<<<<<<< HEAD
-let creaEstructura = () =>{
-=======
 const creaEstructura = () =>{
->>>>>>> vista
     document.querySelector(`nav #modificable`).appendChild(crearElemento({
         etiqueta:"p",
         contenido:null,
@@ -73,11 +69,7 @@ const creaEstructura = () =>{
         }]
     }));
 };
-<<<<<<< HEAD
-let creaHtml = (numero,nombre) =>{
-=======
 const creaHtml = (numero,nombre) =>{
->>>>>>> vista
     document.querySelector(`nav #modificable`).appendChild(crearElemento({
         etiqueta:"p",
         contenido:null,
@@ -127,11 +119,7 @@ const creaHtml = (numero,nombre) =>{
     }));
 };
 
-<<<<<<< HEAD
-let getPaises = () => {
-=======
 const getPaises = () => {
->>>>>>> vista
     let listaPaises = [];
 
     for(let key in bdd){
