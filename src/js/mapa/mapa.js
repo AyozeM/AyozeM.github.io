@@ -29,6 +29,7 @@ export const dibujaMapa = () =>{
     };
 
     map = new google.maps.Map(document.querySelector(`#mapa`),responsive(mapOptions));
+    var s =3;
 }
 /**
  * modifica el zoom y el centro del mapa en funcion del dispositivo
@@ -72,6 +73,8 @@ export const creaMarcador = (data)=>{
     });
     google.maps.event.addListener(marcador,"click",()=>{
         info.open(map,marcador);
+        map.setZoom(12);
+        map.setCenter(marcador.position);
         marcador.setAnimation(google.maps.Animation.BOUNCE);
         setTimeout(()=>{marcador.setAnimation(null);},750);
     },false);
@@ -108,6 +111,13 @@ export const porPaises = () => {
  * Elimina todos los marcadores
  */
 const limiparMapa = ()=>{
+    let prototipo = {
+        zoom:0,
+        center:''
+    }
+    let original = responsive(prototipo);
+    map.setZoom(original.zoom);
+    map.setCenter(original.center)
     marcadores.map(e=>{
         e.setMap(null);
     });
