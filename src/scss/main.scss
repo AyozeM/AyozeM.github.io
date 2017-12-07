@@ -1,3 +1,58 @@
+$colorCheck:green;
+$check:"✓";
+$tamanoCheck:1.5em;
+
+$colorNavegacion:rgba(250, 128, 114, 0.50);
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav{
+    background-color: $colorNavegacion;
+    display: flex;
+    flex-direction: column;
+    &>*{
+        flex-basis: (40%/3);
+    }
+    & #modificable{
+        flex-basis: 60%;
+        display: flex;
+        overflow-y: scroll;
+        & label input{
+            display: none;
+            &:checked+span::after{
+                content: $check;
+                color: $colorCheck;
+                font-size: $tamanoCheck;
+            }
+        }
+    }
+}
+
+
+label[for="movilidad"]{
+    width: 75%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    & *{
+        width: 50%;
+        height: 50%;
+    }
+    & span{
+        padding: 2%;
+    }
+}
+
+.controlaFiltros{
+    display: none;
+    & + input{
+        display: none;
+    }
+}
+
 
 @media screen and (max-width:992px){
     @import './layouts/mobile.scss';
@@ -8,8 +63,3 @@
 }
 @import './componentes/_toggle_button.scss';
 @import './componentes/btnMapa.scss';
-*{
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
-}

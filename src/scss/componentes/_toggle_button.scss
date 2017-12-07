@@ -1,8 +1,22 @@
-.toggle label{
+$altoCarril:2em;
+$anchoCarril: 5em;
+
+$incremento:.5em;
+
+$medidaBola:$altoCarril+$incremento;
+$cuadreBola:$incremento/2;
+
+$colorPrimario:rgb(255, 255, 175);
+$colorSecundario:rgb(184, 236, 134);
+.toggle{
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  & label{
     display:inline-block;
-    width:5em;
-    height:2em;
-    background-color:rgb(255, 255, 175);
+    width:$anchoCarril;
+    height:$altoCarril;
+    background-color:$colorPrimario;
     position:relative;
     border-radius:1em;
     box-shadow: inset .3px .3px 5px,inset -.3px -.3px 5px,;
@@ -10,23 +24,17 @@
       border-radius:50%;
       position:absolute;
       display:inline-block;
-      width:2.5em;
-      height:2.5em;
-      top:-.25em;
-      background-color:rgb(184, 236, 134);
+      width:$medidaBola;
+      height:$medidaBola;
+      top:-$cuadreBola;
+      background-color:$colorSecundario;
       box-shadow: inset -3px -3px 15px;
     }
   }
-.toggle input:checked + label>bola{
-    right:0;
+  & input{
+    display: none;
+    &:checked + label>bola{
+      right: 0;
+    }
   }
-  
-.toggle input{
-    display:none;
-  }
-
-.toggle{
-  display: flex;
-  justify-content: space-around;
-  align-content: center;
 }

@@ -3,21 +3,25 @@ body{
 }
 
 nav{
-    min-width: 20vw;
+    width: 25vw;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    &>*{
-        flex-basis: (40%/3);
+    &>p{
+        padding: 2%;
     }
     & #modificable{
-        flex-basis: 60%;
-        display: flex;
         flex-direction: column;
         justify-content: space-between;
         padding: 2%;
-        overflow-y: scroll;
         & p{
+            & span{
+                display: block;
+                margin-bottom: 3%
+            }
+            & > select{
+                display: block;
+                width: 75%;
+                margin:0 auto;
+            }
             & label{
                 width: 100%;
                 display: inline-block;
@@ -25,26 +29,12 @@ nav{
                 cursor: pointer;
                 border: thin solid;
                 margin:1%;
-                & input{
-                    display: none;
-                    &:checked+span::after{
-                        content: "✓";
-                        color:green;
-                        font-size: 1.5em;
-                    }
-                }
             }
         }
     }
 }
 #mapa{
-    flex-basis:80vw;
+    flex-basis:75vw;
     height: 100vh;
     filter: none;
-}
-.controlaFiltros{
-    display: none;
-    & + input{
-        display: none;
-    }
 }
