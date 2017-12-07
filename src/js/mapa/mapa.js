@@ -30,7 +30,11 @@ export const dibujaMapa = () =>{
     map = new google.maps.Map(document.querySelector(`#mapa`),responsive(compruebaHora(mapOptions)));
     var s =3;
 }
-
+/**
+ * Comprueba la hora que es y pone un estilo de noche al mapa (si fuera de noche)
+ * @param {object} data - objeto de configuracion del mapa
+ * @returns {object} - retorna el objeto modificado 
+ */
 const compruebaHora = data =>{
     let now = new Date();
     if(now.getHours()<7 || now.getHours()>21){
@@ -74,15 +78,18 @@ export const creaMarcador = (data)=>{
     let marcador = new google.maps.Marker({
         position:coordenadas,
         map:map,
-        title:`<strong>Ciclos:</strong><br>${data.ciclos.map(e=>`<li>${e}</li>`).toString().replace(/,/g,'')}`
+        title:data.nombre
     });
     let info = new google.maps.InfoWindow({
-        content:marcador.title
+        content:`<strong>Ciclos:</strong><br>${data.ciclos.map(e=>`<li>${e}</li>`).toString().replace(/,/g,'')}`
     });
     google.maps.event.addListener(marcador,"click",()=>{
+        //abre la ventana de informacion
         info.open(map,marcador);
+        //acerca el mapa a la zona del marcador
         map.setZoom(12);
         map.setCenter(marcador.position);
+        //añade y temporiza la animacion
         marcador.setAnimation(google.maps.Animation.BOUNCE);
         setTimeout(()=>{marcador.setAnimation(null);},750);
     },false);

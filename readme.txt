@@ -7,10 +7,9 @@ El funcionamiento es sencillo, simplemente hay que rellenar el formulario y cuan
 
 En el mapa aparecerán los marcadores sobre las ciudades de cumplan los filtros. Si pinchas sobre algun marcador aparecerá una lista con los ciclos que se han movilizado hacia esa ciudad.
 
-## Proyectos de mejora
-* En próximas actualizaciones se tiene pensado incluir un login para poder añadir movilizaciones, ciudades, ciclos,...
-
-* Además se piensa incluir más información y mejor presentada al clicar sobre los marcadores.
+## Mejoras
+* Ahora al clicar sobre un marcador el mapa se acerca, exponiendo mejor la ciudad que se desea ver.
+* Al caer la noche el mapa cambia a tonalidades mas oscuras.
 
 ## Información técnica
 Si te interesa el proyecto y te surgen dudas técnicas no dudes en visitar la documentacion disponible en la carpeta **doc**
