@@ -27,10 +27,18 @@ export const dibujaMapa = () =>{
         rotateControl: false,
         fullscreenControl: false
     };
-
-    map = new google.maps.Map(document.querySelector(`#mapa`),responsive(mapOptions));
+    map = new google.maps.Map(document.querySelector(`#mapa`),responsive(compruebaHora(mapOptions)));
     var s =3;
 }
+
+const compruebaHora = data =>{
+    let now = new Date();
+    if(now.getHours()<7 || now.getHours()>21){
+       data.styles = require('./nocturno.json');
+    }
+    return data;
+}
+
 /**
  * modifica el zoom y el centro del mapa en funcion del dispositivo
  * @param {object} datosMapa - opciones originales del mapa
