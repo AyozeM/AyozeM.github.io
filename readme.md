@@ -21,8 +21,5 @@ Si te interesa el proyecto y te surgen dudas técnicas no dudes en visitar la do
 
 
 ## Informacion Personal
-Autor: **Ayoze Martín Hdez**.
-Contacto: **ayozemartinhdez@gmail.com**
-Estudios: 
-* Técnico en sistemas microinformáticos y redes
-* Actualmente cursando: **CFGS Desarrollo de Aplicacions  Web**
+* Autor: **Ayoze Martín Hdez**.
+* Contacto: **ayozemartinhdez@gmail.com**
